@@ -1,0 +1,91 @@
+$border-radius: 10px;
+$purple: #8175ff;
+$btn-color: $purple;
+
+.container {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 100px;
+    min-width: 250px;
+    h1 {
+        font-size: 35px;
+        text-align: center;
+        color: white;
+        width: 150px;
+        margin: -30px auto 30px auto;
+        padding: 10px;
+        background: none;
+        span {
+            color: $purple
+        }
+    }
+    h3 {
+        color: rgb(233, 227, 227)
+    }
+    button {
+        font-size: 17px;
+        color: white;
+        padding: 10px;
+        border-radius: $border-radius;
+        background: $btn-color;
+        border: 1px solid $btn-color;
+        &:hover {
+            opacity: .8;
+        }
+    }
+    input {
+        margin-right: 0;
+        color:rgb(97, 96, 96);
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        &:focus {
+            outline: none;
+        }
+    }
+    .name {
+        margin: 0 0 40px 0;
+        padding: 0;
+        display: inline-block;
+        input {
+            color: white;
+            border-radius: 0;
+            margin: 0;   
+            width: 150px; 
+            background: rgba($color: white, $alpha: .1)       
+        }
+        i {
+            $color: #FFCA5D;
+            border: 1px solid $color;
+            font-size: 17px;
+            color: white;
+            background: $color;
+            padding: 10px 10px 13px 10px;
+            border-radius: 0;
+        }
+        &.error {
+            box-shadow: rgba(235, 109, 109, 0.5) 0px 0px 0px 1px; 
+        }
+    }
+    .join-lobby {
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 0px 1px;
+        display: inline-block;
+        border-radius: $border-radius;
+        input {
+            border-radius: $border-radius 0 0 $border-radius;
+            background: rgba($color: white, $alpha: .1);
+            color: white;
+        }
+        button {
+           border-radius: 0 $border-radius $border-radius 0;
+        }
+        &.error {
+            box-shadow: rgba(235, 109, 109, 0.5) 0px 0px 0px 1px; 
+        }
+    }
+}

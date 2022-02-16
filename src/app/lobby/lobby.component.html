@@ -1,0 +1,2 @@
+<chat *ngIf="lobby; else error" [user]="user" [onlineUsers]="onlineUsers" [lobby]="lobby"></chat>
+<ng-template #error>Oops. No lobby found.</ng-template>

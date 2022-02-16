@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="online">
+        <h1 [routerLink]="['']" (click)="disconnect()">chat.<span>io</span></h1>
+        <table>
+            <tr>
+                <th>lobby</th>
+                <td class="lobby" (click)="copy(lobby)">{{lobby}}</td>
+            </tr>
+            <tr>
+                <th>name</th>
+                <td class="name" [ngStyle]="{'color': user.color}">{{user.name}}</td>
+            </tr>
+            <tr>
+                <th>online</th>
+                <td class="online">{{onlineUsers.length}}</td>
+            </tr>
+        </table>
+        <ng-container *ngFor="let user of onlineUsers">
+            <div class="online-user">
+                <img 
+                    src="assets/images/animal-icons/{{animals[user.imageIndex]}}.ico" 
+                    [ngStyle]="{'background': user.color}"
+                />
+                <p>{{user.name}}
+                <fa-icon 
+                    *ngIf="user.isTyping"
+                    [icon]="faCommentDots"
+                    [ngStyle]="{'color': user.color}"
+                    [ngClass]="'icon'"
+                ></fa-icon>
+                </p>
+                
+            </div>
+        </ng-container>
+    </div>
+    <div class="messages">
+        <div class="message-box">
+            <ng-container *ngFor="let message of messages">
+                <div [ngClass]="message.user.id == user.id ? 'sent' : 'received'">
+                    <div class="name">
+                        <img 
+                            src="assets/images/animal-icons/{{animals[message.user.imageIndex]}}.ico" 
+                            [ngStyle]="{'background': message.user.color}"
+                        />
+                        <p><span [ngStyle]="{'color': message.user.color}">{{message.user.name}}</span></p>
+                    </div>
+                    <p class="message">{{message.message}}</p>
+                </div>  
+            </ng-container>
+        </div>
+        <div class="send">
+            <input 
+                type="text" 
+                #input 
+                [(ngModel)]="message" 
+                placeholder="Your message. . ."
+                trackFocus
+            />    
+            <i class="fa fa-paper-plane" (click)="sendMessage(message); input.value = ''"></i>
+        </div>
+    </div>
+</div>

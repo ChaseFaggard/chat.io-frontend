@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>chat.<span>io</span></h1>
+    <div class="name" [ngClass]="{'error': formError.name}">
+        <i class="fa fa-tags"></i>
+        <input [(ngModel)]="name" placeholder="Username. . ." (keyup)="checkNameError()"/>
+    </div>
+    <br>
+    <button (click)="createLobby(true)">Create chat room</button>
+    <h3>or</h3>
+    <div class="join-lobby" [ngClass]="{'error': formError.lobby}">
+        <input [(ngModel)]="lobby" placeholder="Lobby Code. . ." (keyup)="checkLobbyError()" (keydown.enter)="joinLobby()"/>
+        <button (click)="joinLobby()">Join</button>
+    </div>
+</div>
