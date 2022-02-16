@@ -11,7 +11,7 @@ import User from './Classes/User'
 })
 export class SocketService {
 
-  private socket: Socket = io(environment.production ? '' : 'http://localhost:8080')
+  private socket: Socket = io(environment.production ? 'https://chat-io-server.herokuapp.com/' : 'http://localhost:8080')
 
   constructor() { }
 

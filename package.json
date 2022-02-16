@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "deploy": "echo \"Pushing all changes to main with comment: '${npm_config_message}'\" && git add . && git commit -m \"${npm_config_message}\" && git push origin main",
     "test": "ng test"
   },
   "private": true,
